@@ -19,3 +19,17 @@ class Solution:
             elif dic[char] != t[i]:
                 return False  # If current mapping doesn't match, return False
         return True
+
+def longestConsecutive(self, nums: List[int]) -> int:
+    max_len = 0
+    nums_set = set()
+    for i in range(len(nums)):
+        ele = nums[i]
+        if ele - 1 in nums_set:
+            continue
+        length = 1
+        while ele + 1 in nums_set:
+            length += 1
+            ele = ele + 1
+        max_len = max(max_len, length)
+    return max_len
