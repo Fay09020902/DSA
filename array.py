@@ -32,4 +32,4 @@ def longestConsecutive(self, nums: List[int]) -> int:
             length += 1
             ele = ele + 1
         max_len = max(max_len, length)
-    return max_len
+
